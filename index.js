@@ -1,11 +1,20 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-client.on('message', function (message) {
-  if (message.content === "/cochonou") {
-    client.channels.get('648562428640231434').send(message.attachement.url);
-    client.channel.send('Succès !')
+client.on('ready', () => {
+  console.log('Bot as been planted !!')
+})
+
+
+//-------------------------------------------------------
+
+
+client.on('message', message => {
+  if (message.content === '!ping') {
+    message.channel.send('Pong.');
   }
 });
+
+//--------------------------------------------------------
 
 client.login(process.env.TOKEN);
