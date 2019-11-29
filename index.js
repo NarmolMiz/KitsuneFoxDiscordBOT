@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const prefix = '/'
 
 client.on('ready', () => {
   console.log('Bot as been planted !!')
@@ -10,7 +11,7 @@ client.on('ready', () => {
 
 
 client.on('message', message => {
-  if (message.content === '!ping') {
+  if (message.content === '/ping') {
     message.channel.send('Pong.');
   }
 });
