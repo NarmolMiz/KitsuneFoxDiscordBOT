@@ -46,7 +46,7 @@ client.on("message", async message => {
     console.log('Used command : userinfo')
 
   } else if (message.content === `${prefix}amessage`) {
-    message.channel.send(message.content)
+    message.channel.get('648562428640231434').send(message.content)
     message.delete()
     console.log('Used command : amessage')
   }
