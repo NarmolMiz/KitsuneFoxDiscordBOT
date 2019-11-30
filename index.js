@@ -3,8 +3,7 @@ const client = new Discord.Client();
 const prefix = '/'
 
 client.on('ready', () => {
-  console.log('Bot as been planted !!')
-  console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
+  console.log(`Bot has been planted, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
 })
 
@@ -30,7 +29,6 @@ client.on("message", async message => {
   if (message.author.bot) return;
 
   if (message.content === `${prefix}ping`) {
-    message.channel.send('Pong.');
     const m = await message.channel.send("Ping?");
     m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
     console.log('Used command : ping')
@@ -46,6 +44,12 @@ client.on("message", async message => {
   } else if (message.content === `${prefix}userinfo`) {
     message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
     console.log('Used command : userinfo')
+
+  } else if (message.content === `${prefix}server`) {
+    channel.bulkDelete(5)
+      .then(messages => console.log(`Bulk deleted ${messages.size} messages`))
+      .catch(console.error);
+    console.log('Used command : clean')
   }
 });
 
