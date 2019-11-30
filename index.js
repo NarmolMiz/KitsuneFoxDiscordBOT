@@ -45,11 +45,10 @@ client.on("message", async message => {
     message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
     console.log('Used command : userinfo')
 
-  } else if (message.content === `${prefix}clean`) {
-    channel.bulkDelete(5)
-      .then(messages => console.log(`Bulk deleted ${messages.size} messages`))
-      .catch(console.error);
-    console.log('Used command : clean')
+  } else if (message.content === `${prefix}amessage`) {
+    message.channel.send(message.content)
+    message.delete()
+    console.log(message.author ' used command : amessage')
   }
 });
 
