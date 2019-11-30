@@ -25,7 +25,10 @@ client.on("guildDelete", guild => {
 //----------------------------------------------------
 
 
-client.on('message', message => {
+client.on("message", async message => {
+
+  if (message.author.bot) return;
+
   if (message.content === `${prefix}ping`) {
     message.channel.send('Pong.');
     const m = await message.channel.send("Ping?");
@@ -48,7 +51,7 @@ client.on('message', message => {
 
 //--------------------------------------------------------
 
-
+await
 
 //--------------------------------------------------------
 
