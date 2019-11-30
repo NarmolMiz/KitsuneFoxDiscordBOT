@@ -31,6 +31,8 @@ client.on("message", async message => {
 
   if (message.content === `${prefix}ping`) {
     message.channel.send('Pong.');
+    const m = await message.channel.send("Ping?");
+    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
     console.log('Used command : ping')
 
   } else if (message.content === `${prefix}beep`) {
@@ -49,7 +51,7 @@ client.on("message", async message => {
 
 //--------------------------------------------------------
 
-await
+
 
 //--------------------------------------------------------
 
