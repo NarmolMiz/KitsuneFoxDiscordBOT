@@ -4,21 +4,21 @@ const prefix = '/'
 
 client.on('ready', () => {
   console.log(`Bot has been planted, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
-  client.user.setActivity(`Serving ${client.guilds.size} servers`);
+  client.user.setActivity(`En route sur ${client.guilds.size} serveurs`);
 })
 
 //-------------------------------------------------------
 
 client.on("guildCreate", guild => {
   console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-  client.user.setActivity(`Serving ${client.guilds.size} servers`);
+  client.user.setActivity(`En route sur ${client.guilds.size} serveurs`);
 });
 
 //-----------------------------------------------------
 
 client.on("guildDelete", guild => {
   console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-  client.user.setActivity(`Serving ${client.guilds.size} servers`);
+  client.user.setActivity(`En route sur ${client.guilds.size} serveurs`);
 });
 
 //----------------------------------------------------
@@ -45,7 +45,7 @@ client.on("message", async message => {
     message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
     console.log('Used command : userinfo')
 
-  } else if (message.content === `${prefix}server`) {
+  } else if (message.content === `${prefix}clean`) {
     channel.bulkDelete(5)
       .then(messages => console.log(`Bulk deleted ${messages.size} messages`))
       .catch(console.error);
