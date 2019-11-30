@@ -43,10 +43,6 @@ client.on('message', message => {
   } else if (message.content === `${prefix}userinfo`) {
     message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
     console.log('Used command : userinfo')
-
-  } else if (message.content === `${prefix}amessage`) {
-    message.channels.get('648562428640231434').send(message.attachments.url)
-    console.log('Used command : amessage')
   }
 });
 
