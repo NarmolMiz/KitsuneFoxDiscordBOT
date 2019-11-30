@@ -44,11 +44,6 @@ client.on("message", async message => {
   } else if (message.content === `${prefix}userinfo`) {
     message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
     console.log('Used command : userinfo')
-
-  } else if (message.content === `${prefix}amessage`) {
-    message.channel.send(message.content)
-    message.delete()
-    console.log(message.author ' used command : amessage')
   }
 });
 
