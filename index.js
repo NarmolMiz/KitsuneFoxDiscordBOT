@@ -80,7 +80,8 @@ client.on("message", async message => {
     console.log('Used command : anonyme url')
 
   } else if (message.content === `${prefix}heure`) {
-    message.channel.send(message.createdTimestamp);
+    new Date()
+    message.channel.send(Date);
     console.log('Used command : heure')
   }
 });
