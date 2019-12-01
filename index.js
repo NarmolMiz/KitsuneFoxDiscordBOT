@@ -85,6 +85,7 @@ client.on("message", async message => {
     console.log('Used command : heure')
 
   } else if (message.content.startsWith`${prefix}bannir`) {
+    console.log('Used command : bannir')
     guild.ban(user, { days: 7, reason: 'Il devait y aller' })
       .then(console.log)
       .catch(console.error);
