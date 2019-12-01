@@ -80,7 +80,8 @@ client.on("message", async message => {
     console.log('Used command : anonyme url')
 
   } else if (message.content === `${prefix}heure`) {
-    message.channel.send(message.createdTimestamp '\n Utilise ce site pour consulter la date !! :joy: : https://pixelatomy.com/snow-stamp/');
+    message.edit(message.createdTimestamp);
+    message.channel.send('Utilise ce site pour consulter la date !! :joy: : https://pixelatomy.com/snow-stamp/')
     console.log('Used command : heure')
   }
 });
