@@ -23,8 +23,8 @@ client.on("guildDelete", guild => {
 
 //----------------------------------------------------
 
-client.on("guildMemberAdd", member, guild => {
-  console.log(`Member ${member.name} has joined ${guild.name}`)
+client.on("guildMemberAdd", member => {
+  console.log(`Member ${member.name} has joined ${member.name}`)
   channel.get('648562428640231434').send(`**${member.name} a rejoint le serveur !! :joy:**`)
 });
 
