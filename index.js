@@ -65,7 +65,7 @@ client.on("message", async message => {
     message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
     console.log('Used command : userinfo')
 
-  } else if (message.content === `${prefix}anonyme url`) {
+  } else if (message.content.startsWith`${prefix}anonyme url`) {
     message.channel.send(message.attachments.url);
     console.log('Used command : anonyme url')
 
