@@ -1,11 +1,22 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = '/'
+const activities_list = [
+    "with the &help command.", 
+    "with the developers console",
+    "with some code", 
+    "with JavaScript"
+let aboLv5Role = message.guild.roles.find(role => role.name === "abonné Lv5");
 
 client.on('ready', () => {
   console.log(`Bot has been planted, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
-  client.user.setActivity(`En route sur ${client.guilds.size} serveurs`);
-})
+  client.user.setActivity(`En route sur ${client.guilds.size} serveurs`)
+
+    setInterval(() => {
+        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
+        aboLv5Role.setColor(activities_list[index]);
+    }, 1000);
+});
 
 //-------------------------------------------------------
 
