@@ -17,7 +17,7 @@ const color_list = [
 client.on('ready', () => {
     setInterval(() => {
         const index = Math.floor(Math.random() * (color_list.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
-        client.edit_role(623542762993745920, &639879164182134800, colour=color_list); // sets role color to one of the phrases in the arraylist.
+        client.edit_role(623542762993745920, 639879164182134800, colour=color_list); // sets role color to one of the phrases in the arraylist.
     }, 10000); // Runs this every 10 seconds.
 });
 
