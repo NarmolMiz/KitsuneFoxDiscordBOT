@@ -1,21 +1,24 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = '/'
+
+client.on('ready', () => {
+  console.log(`Bot has been planted, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
+  client.user.setActivity(`En route sur ${client.guilds.size} serveurs`)
+});
+
 const activities_list = [
     "with the &help command.", 
     "with the developers console",
     "with some code", 
     "with JavaScript"
-let aboLv5Role = message.guild.roles.find(role => role.name === "abonné Lv5");
+    ]; // creates an arraylist containing phrases you want your bot to switch through.
 
 client.on('ready', () => {
-  console.log(`Bot has been planted, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
-  client.user.setActivity(`En route sur ${client.guilds.size} serveurs`)
-
     setInterval(() => {
-        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
-        aboLv5Role.setColor(activities_list[index]);
-    }, 1000);
+        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
+        client.user.setActivity(activities_list[index]); // sets bot's activities to one of the phrases in the arraylist.
+    }, 10000); // Runs this every 10 seconds.
 });
 
 //-------------------------------------------------------
