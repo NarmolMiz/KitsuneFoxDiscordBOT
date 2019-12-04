@@ -110,7 +110,6 @@ client.on("message", async message => {
       }
     }
     if (user === message.author) return message.channel.send('You can\'t kill yourself (stupid human...)');
-    if (!message.guild.member(user).bannable) return message.reply('You can\'t kill this user because you the bot has not sufficient permissions!');
 
     message.user.addRoles(['623565775394963483', '623846251112300544'])
       .then(console.log)
