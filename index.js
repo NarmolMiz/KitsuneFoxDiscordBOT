@@ -7,18 +7,18 @@ client.on('ready', () => {
   client.user.setActivity(`En route sur ${client.guilds.size} serveurs`)
 });
 
-const activities_list = [
-    "with the &help command.", 
-    "with the developers console",
-    "with some code", 
-    "with JavaScript"
+const color_list = [
+    "#fc0303", 
+    "#ffe205",
+    "#05ff09", 
+    "#05f3ff"
     ]; // creates an arraylist containing phrases you want your bot to switch through.
 
 client.on('ready', () => {
     setInterval(() => {
-        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
-        client.user.setActivity(activities_list[index]); // sets bot's activities to one of the phrases in the arraylist.
-    }, 1000); // Runs this every 1 seconds.
+        const index = Math.floor(Math.random() * (color_list.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
+        client.edit_role(623542762993745920, <@&623552798826692608>, colour=color_list); // sets role color to one of the phrases in the arraylist.
+    }, 10000); // Runs this every 10 seconds.
 });
 
 //-------------------------------------------------------
