@@ -73,7 +73,7 @@ client.on("message", async message => {
     message.channel.send(`${message.createdTimestamp} \n Utilise ce site pour consulter la date !! :joy: : https://pixelatomy.com/snow-stamp/`);
     console.log('Used command : heure')
 
-  } else if (message.content.startsWith`${prefix}bannir`) {
+  } else if (message.content.startsWith(`${prefix}bannir`)) {
     console.log('Used command : bannir')
     const args = message.content.split(' ').slice(1); // All arguments behind the command name with the prefix
     const user = message.mentions.users.first(); // returns the user object if an user mention exists
@@ -111,12 +111,13 @@ client.on("message", async message => {
     }
     if (user === message.author) return message.channel.send('You can\'t kill yourself (stupid human...)');
 
-    if (message.author.hasPermission('ADMINISTRATOR'))
+    if (message.author.hasPermission('ADMINISTRATOR')) {
       message.guild.member(user).addRoles(['623565775394963483', '623846251112300544'])
         .then(console.log)
         .catch(console.error);
-    else
-      message.reply(`Non mais oh, tu te prends pour qui toi ?! Allez hop /KARMA, Mute pour ${message.author} :joy:. Ca t'apprendears !! :joy: :joy: :joy:`)
+
+      return message.reply(`Non mais oh, tu te prends pour qui toi ?! Allez hop /KARMA, Mute pour ${message.author} :joy:. Ca t'apprendears !! :joy: :joy: :joy:`)
+    }
   }
 });
 
