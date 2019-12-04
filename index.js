@@ -111,9 +111,10 @@ client.on("message", async message => {
     }
     if (user === message.author) return message.channel.send('You can\'t kill yourself (stupid human...)');
 
-    message.guild.member(user).addRoles(['623565775394963483', '623846251112300544'])
-      .then(console.log)
-      .catch(console.error);
+    if (message.author.hasPermission('ADMINISTRATOR'))
+      message.guild.member(user).addRoles(['623565775394963483', '623846251112300544'])
+        .then(console.log)
+        .catch(console.error);
   }
 });
 
