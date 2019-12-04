@@ -115,6 +115,8 @@ client.on("message", async message => {
       message.guild.member(user).addRoles(['623565775394963483', '623846251112300544'])
         .then(console.log)
         .catch(console.error);
+    else
+      message.reply(`Non mais oh, tu te prends pour qui toi ?! Allez hop /KARMA, Mute pour ${message.author} :joy:. Ca t'apprendears !! :joy: :joy: :joy:`)
   }
 });
 
