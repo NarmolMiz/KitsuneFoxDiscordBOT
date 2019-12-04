@@ -1,24 +1,24 @@
 const Discord = require("discord.js");
+
 const client = new Discord.Client();
+
+const color_list = [
+  "#fc0303",
+  "#ffe205",
+  "#05ff09",
+  "#05f3ff"
+]; // creates an arraylist containing colors you want your bot to switch through.
+
 const prefix = '/'
 
 client.on('ready', () => {
   console.log(`Bot has been planted, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
   client.user.setActivity(`En route sur ${client.guilds.size} serveurs`)
-});
 
-const color_list = [
-    "#fc0303", 
-    "#ffe205",
-    "#05ff09", 
-    "#05f3ff"
-    ]; // creates an arraylist containing phrases you want your bot to switch through.
-
-client.on('ready', () => {
-    setInterval(() => {
-        const index = Math.floor(Math.random() * (color_list.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
-        client.edit_role(623542762993745920, 639879164182134800, colour=color_list); // sets role color to one of the phrases in the arraylist.
-    }, 10000); // Runs this every 10 seconds.
+  setInterval(() => {
+    const index = Math.floor(Math.random() * (color_list.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
+    client.edit_role(623542762993745920, 639879164182134800, colour = color_list); // sets role color to one of the phrases in the arraylist.
+  }, 10000); // Runs this every 10 seconds.
 });
 
 //-------------------------------------------------------
